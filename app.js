@@ -37,13 +37,13 @@ const generateWord = () => {
 const main = () => {
   const start = process.hrtime.bigint(); // and we're off
   // Make OutFiles
-  const outFile = process.argv.length > 2 ?
-    path.resolve((process.argv[2] || '.'), 'cheat-novel.txt') :
+  const outFile = process.argv.length > 3 ?
+    path.resolve((process.argv[3] || '.'), 'cheat-novel.txt') :
     path.resolve('.', 'cheat-novel.txt');
   const statsFile = process.argv.length > 2 ?
-    path.resolve((process.argv[2] || '.'), 'words-stats.json') :
+    path.resolve((process.argv[3] || '.'), 'words-stats.json') :
     path.resolve('.', 'words-stats.json');
-  const stats = process.argv[1]? true : false;
+  const stats = process.argv[2]? true : false;
   // Check Outfile for existing file and if Directories exist
   if (!fs.existsSync(outFile)) {
     // Check if Path is valid
